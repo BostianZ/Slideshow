@@ -21,12 +21,22 @@ function SlideShow() {
   //Starting point
   let index = 0;
 
+  const renderSelectedImage = (index) => {
+    //Set the index to the index of the clicked nav circle image.
+    index = index;
+    slideShowImg.setAttribute("src", `${slideShowPicsData[index]}`)
+    currentSelectedNavCircle(index);
+  }
+
   const renderSlideShowNavCircles = () => {
     const navCircleContainer = document.querySelector(".slideshow-nav");
     slideShowPicsData.forEach((picture, index) => {
       const navCircle = document.createElement("div");
       navCircle.classList.add("slideshow-nav-circle");
       navCircle.setAttribute("id", `${index}`);
+      navCircle.addEventListener("click", (e) => {
+        renderSelectedImage(index);
+      });
       navCircleContainer.appendChild(navCircle);
     })
   }
