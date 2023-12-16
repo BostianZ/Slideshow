@@ -17,42 +17,45 @@ function SlideShow() {
   const previousBtn = document.querySelector(".previous");
   let index = 0;
 
-  const checkAndSetIndex = (end, newIndex) => {
-    if (index === end) {
-      index = newIndex;
-    }
-  };
-
   const navCircles = (index) => {
     slideShowNavCircles.forEach((circle) => {
       circle.classList.remove("selected");
     });
-
-    console.log(slideShowNavCircles[index]);
     slideShowNavCircles[index].classList.add("selected");
   };
 
   const next = () => {
-    checkAndSetIndex(3, 0);
+    //First picture starts on index 0.
+    //We click next, index goes up to 1.
+    index++
     console.log(index);
-    slideShowImg.setAttribute("src", `${slideShowPicsData[index]}`);
+    //We then update the dom with the image at index one.
+    //Index is currrently 1.
+    slideShowImg.setAttribute("src", `${slideShowPicsData[index]}`)
     navCircles(index);
-    index++;
+    
   };
 
   const previous = () => {
-    checkAndSetIndex(-1, 2);
+
+    //If index is 1
+    //We click prevoius, subtract one from index
+    index--
     console.log(index);
-    slideShowImg.setAttribute("src", `${slideShowPicsData[index]}`);
+
+    //Index is now 0
+    //Update DOM with current image at index 0.
+    slideShowImg.setAttribute("src", `${slideShowPicsData[index]}`)
     navCircles(index);
-    index--;
+
   };
 
   const renderFirstPicture = () => {
+    console.log(index);
     slideShowImg.setAttribute("src", `${slideShowPicsData[0]}`);
     navCircles(0);
   };
-
+ 
   renderFirstPicture();
 
   nextBtn.addEventListener("click", next);
