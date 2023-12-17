@@ -16,6 +16,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #fda403;
 }
 
 .container { 
@@ -39,13 +40,10 @@ img {
 
 button {
   border: none;
-  padding: 32px;
-  font-weight: 700;
-  font-size: 16px;
 }
 
 .slideshow-nav {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -53,11 +51,30 @@ button {
 }
 
 .slideshow-nav-circle {
-  border: 1px solid black;
+  border: 1px solid #e8751a;
   border-radius: 24px;
   padding: 8px;
 }
 
 .selected {
-  background-color: black;
+  background-color: #e8751a;
+}
+
+.arrow {
+  background-color: white;
+  width: 100px;
+  height: 100px;
+  border-top: 6px solid #e8751a;
+  border-right: 6px solid #e8751a;
+  background-color: #fda403;
+}
+
+.right {
+  transform: rotate(45deg);
+  margin-left: 20px;
+}
+
+.left {
+  transform: rotate(-135deg);
+  margin-right: 20px;
 }
