@@ -30,7 +30,7 @@ img {
 }
 
 .slideshow-container {
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
   width: 800px;
   height: 500px;
   display: grid;

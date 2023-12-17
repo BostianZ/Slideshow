@@ -89,6 +89,7 @@ function SlideShow() {
   };
 
   renderFirstPicture();
+  setInterval(next, 5000)
 
   nextBtn.addEventListener("click", next);
   previousBtn.addEventListener("click", previous);
